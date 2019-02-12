@@ -1,0 +1,41 @@
+/* 5. Banner */
+.banner-area {
+    .banner-bg {
+        width: 100%;
+        height: 640px;
+        background-color: $placeholder;
+        background-image: url('../images/banner-bg.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        @include tablet() {
+            height: 500px;
+        }
+        @include landscape-phone() {
+            height: 350px;
+        }
+        @include portrait-phone() {
+            height: 300px;
+        }
+    }
+    .banner-text {
+        padding: 0 47% 0 5%;
+        @include desktop() {
+            padding: 0 5%;
+        }
+        @include tablet() {
+            padding: 50px 5%;
+        }
+        @include landscape-phone() {
+            padding: 50px 5%;
+        }
+        @include portrait-phone() {
+            padding: 50px 5%;
+        }
+        h1 {
+            span {
+                color: $primary-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - Asp.Net Core 2.2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="/template/listed/css/bootstrap.css">
+    <link rel="stylesheet" href="/template/listed/css/animate.css">
+    <link rel="stylesheet" href="/template/listed/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/template/listed/fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/template/listed/fonts/fontawesome/css/font-awesome.min.css">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="/template/listed/css/style.css">
+</head>
+<body>
+
+    @await Html.PartialAsync("_header")
+    <!-- END header -->
+
+    @RenderBody()
+
+    @await Html.PartialAsync("_footer")
+    <!-- END footer -->
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214" /></svg></div>
+    <script src="/template/listed/js/jquery-3.2.1.min.js"></script>
+    <script src="/template/listed/js/jquery-migrate-3.0.0.js"></script>
+    <script src="/template/listed/js/popper.min.js"></script>
+    <script src="/template/listed/js/bootstrap.min.js"></script>
+    <script src="/template/listed/js/owl.carousel.min.js"></script>
+    <script src="/template/listed/js/jquery.waypoints.min.js"></script>
+    <script src="/template/listed/js/jquery.stellar.min.js"></script>
+    <script>
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @@type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+      function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        for (var component in componentForm) {
+          document.getElementById(component).value = '';
+          document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+          var addressType = place.address_components[i].types[0];
+          if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+          }
+        }
+      }
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
+    
+    <script src="/template/listed/js/main.js"></script>
+</body>
+</html>

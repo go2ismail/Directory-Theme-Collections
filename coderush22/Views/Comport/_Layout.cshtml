@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Page Title -->
+    <title>@ViewData["Title"] - Asp.Net Core 2.2</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/template/comport/assets/images/logo/favicon.png" type="image/x-icon">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="~/template/comport/assets/css/animate-3.7.0.css">
+    <link rel="stylesheet" href="~/template/comport/assets/css/font-awesome-4.7.0.min.css">
+    <link rel="stylesheet" href="~/template/comport/assets/fonts/flat-icon/flaticon.css">
+    <link rel="stylesheet" href="~/template/comport/assets/css/bootstrap-4.1.3.min.css">
+    <link rel="stylesheet" href="~/template/comport/assets/css/owl-carousel.min.css">
+    <link rel="stylesheet" href="~/template/comport/assets/css/nice-select.css">
+    <link rel="stylesheet" href="~/template/comport/assets/css/style.css">
+</head>
+<body>
+    <!-- Preloader Starts -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Preloader End -->
+    <!-- Header Area Starts -->
+    @await Html.PartialAsync("_header")
+    <!-- Header Area End -->
+    @RenderBody()
+    <!-- Footer Area Starts -->
+    @await Html.PartialAsync("_footer")
+    <!-- Footer Area End -->
+    <!-- Javascript -->
+    <script src="~/template/comport/assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="~/template/comport/assets/js/vendor/bootstrap-4.1.3.min.js"></script>
+    <script src="~/template/comport/assets/js/vendor/wow.min.js"></script>
+    <script src="~/template/comport/assets/js/vendor/owl-carousel.min.js"></script>
+    <script src="~/template/comport/assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="~/template/comport/assets/js/vendor/ion.rangeSlider.js"></script>
+    <script src="~/template/comport/assets/js/main.js"></script>
+</body>
+</html>

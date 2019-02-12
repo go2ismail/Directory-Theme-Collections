@@ -1,0 +1,30 @@
+﻿<header id="header">
+    <div class="container">
+        <div class="row align-items-center justify-content-between d-flex">
+            <div id="logo">
+                <a href="@Url.Action("Index", "Educature")"><img src="/template/educature/img/logo.png" alt="" title="" /></a>
+            </div>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="@Url.Action("Index", "Educature")">Home</a></li>
+                    <li><a href="@Url.Action("About", "Educature")">About</a></li>
+                    <li><a href="@Url.Action("Courses", "Educature")">Courses</a></li>
+                    <li class="menu-has-children">
+                        <a href="#">Pages</a>
+                        <ul>
+                            <li><a href="@Url.Action("Elements", "Educature")">Elements</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-has-children">
+                        <a href="#">Blog</a>
+                        <ul>
+                            <li><a href="@Url.Action("BlogHome", "Educature")">Blog Home</a></li>
+                            <li><a href="@Url.Action("BlogSingle", "Educature")">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="@Url.Action("Contact", "Educature")">Contact</a></li>
+                </ul>
+            </nav><!-- #nav-menu-container -->
+        </div>
+    </div>
+</header>

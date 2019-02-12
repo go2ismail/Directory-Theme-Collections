@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>@ViewData["Title"] - Asp.Net Core 2.2</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/template/dorne/img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link href="~/template/dorne/style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="~/template/dorne/css/responsive/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="dorne-load"></div>
+    </div>
+
+    @await Html.PartialAsync("_header")
+
+    @RenderBody()
+    <!-- ****** Footer Area Start ****** -->
+    @await Html.PartialAsync("_footer")
+    <!-- ****** Footer Area End ****** -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="~/template/dorne/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="~/template/dorne/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap-4 js -->
+    <script src="~/template/dorne/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="~/template/dorne/js/others/plugins.js"></script>
+    <!-- Active JS -->
+    <script src="~/template/dorne/js/active.js"></script>
+</body>
+
+</html>
